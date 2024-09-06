@@ -1,4 +1,4 @@
-# FINAL PROYECT ANDROID STUDIO.
+# FINAL PROJECT | FIRST QUARTER - ANDROID STUDIO.
 ## HEROES APP
 This is a simple app using Android Studio showcasing heroes of Marvel and DC.
 
