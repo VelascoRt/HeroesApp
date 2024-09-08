@@ -9,5 +9,6 @@ It has this requirements:
  - HeroDetailActivity
 
 changelog:
-- 1.0: BASE FILES.
+- 1.1.1 : PREFERENCES.
 - 1.1: LOGIN FUNCIONAL.
+- 1.0: BASE FILES.
