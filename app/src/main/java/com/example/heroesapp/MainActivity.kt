@@ -14,17 +14,23 @@ import com.example.heroesapp.models.User
 import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
-
     // Valores login
     lateinit var emailEditText : EditText
     lateinit var passwordEditTExt : EditText
     lateinit var  loginBtn : Button
-
     // Instancia
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
+        // Preferencias / isLogged.
+        val sharedPreferences = getSharedPreferences("prefs", MODE_PRIVATE)
+        val isLogged = sharedPreferences.getBoolean("isLogged",false)
+        if (isLogged) {
+            val loginSuccesful = Intent(this@MainActivity,HomeActivity::class.java)
+            startActivity(loginSuccesful)
+            finish()
+        }
         // Valores login
         emailEditText = findViewById(R.id.emailET)
         passwordEditTExt = findViewById(R.id.passwordET)
@@ -47,10 +53,14 @@ class MainActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
+            // Login Succesful, Guardar preferencias
+            val editor = sharedPreferences.edit()
+            editor.putBoolean("isLogged",true)
+            editor.apply()
             // Login Succesful, ingresar a HOME.
             val loginSuccesful = Intent(this@MainActivity,HomeActivity::class.java)
             startActivity(loginSuccesful)
-
+            finish()
         }
     }
 }
