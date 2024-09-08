@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">HeroesApp</string>
+    <string name="email">Correo Electronico</string>
+    <string name="password">Contraseña</string>
+    <string name="login">Iniciar sesión a la sesión</string>
 </resources>
