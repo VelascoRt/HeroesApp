@@ -10,3 +10,4 @@ It has this requirements:
 
 changelog:
 - 1.0: BASE FILES.
+- 1.1: LOGIN FUNCIONAL.
