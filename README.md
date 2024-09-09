@@ -9,6 +9,7 @@ It has this requirements:
  - HeroDetailActivity
 
 changelog:
+- 1.3 : HEROES ACTIVITY
 - 1.2 : PUBLISHER ACTIVITY
 - 1.1.1 : PREFERENCES.
 - 1.1: LOGIN FUNCIONAL.
