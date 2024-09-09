@@ -7,4 +7,9 @@
     <string name="companies_heroes_text">Compañías de Superhéroes</string>
     <string name="heroes_text">Superhéroes destacados</string>
     <string name="publisher_name">Nombre de la compañia</string>
+    <string name="heroe_name_text">Nombre del Superhéroe</string>
+    <string name="avengers_text">Los Vengadores</string>
+    <string name="xMen_text">The X-Men</string>
+    <string name="fourFantastic_text">Los Cuatro Fantasticos</string>
+    <string name="solo_text">Justicieros</string>
 </resources>
