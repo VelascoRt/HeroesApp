@@ -2,14 +2,11 @@ package com.example.heroesapp
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.example.heroesapp.activities.HomeActivity
+import com.example.heroesapp.activities.PublisherActivity
 import com.example.heroesapp.models.User
 import com.google.android.material.snackbar.Snackbar
 
@@ -26,8 +23,9 @@ class MainActivity : AppCompatActivity() {
         // Preferencias / isLogged.
         val sharedPreferences = getSharedPreferences("prefs", MODE_PRIVATE)
         val isLogged = sharedPreferences.getBoolean("isLogged",false)
+        val name = sharedPreferences.getString("name","Usuario")
         if (isLogged) {
-            val loginSuccesful = Intent(this@MainActivity,HomeActivity::class.java)
+            val loginSuccesful = Intent(this@MainActivity,PublisherActivity::class.java)
             startActivity(loginSuccesful)
             finish()
         }
@@ -35,6 +33,7 @@ class MainActivity : AppCompatActivity() {
         emailEditText = findViewById(R.id.emailET)
         passwordEditTExt = findViewById(R.id.passwordET)
         loginBtn = findViewById(R.id.btnLogin)
+
         loginBtn.setOnClickListener { v ->
             val email = emailEditText.text.toString()
             val password = passwordEditTExt.text.toString()
@@ -57,8 +56,20 @@ class MainActivity : AppCompatActivity() {
             val editor = sharedPreferences.edit()
             editor.putBoolean("isLogged",true)
             editor.apply()
+
+            // Shared Preferences | Nombre
+            var name : String = "Usuario"
+            val users = User.users.forEach {
+                user: User ->
+                if (user.email == email && user.password == password){
+                    name = user.name
+                }
+            }
+            editor.putString("name",name)
+            editor.apply()
+
             // Login Succesful, ingresar a HOME.
-            val loginSuccesful = Intent(this@MainActivity,HomeActivity::class.java)
+            val loginSuccesful = Intent(this@MainActivity,PublisherActivity::class.java)
             startActivity(loginSuccesful)
             finish()
         }
