@@ -4,7 +4,7 @@
     <string name="password">Contraseña</string>
     <string name="login">Iniciar sesión</string>
     <string name="welcome_text">Bienvenido Usuario</string>
-    <string name="companies_heroes_text">Compañías de Superhéroes</string>
+    <string name="publishers_heroes_text">Compañías de Superhéroes</string>
     <string name="heroes_text">Superhéroes destacados</string>
     <string name="publisher_name">Nombre de la compañia</string>
     <string name="heroe_name_text">Nombre del Superhéroe</string>
@@ -12,4 +12,9 @@
     <string name="xMen_text">The X-Men</string>
     <string name="fourFantastic_text">Los Cuatro Fantasticos</string>
     <string name="solo_text">Justicieros</string>
+    <string name="superheroesOf_text">Superhéroes de %1$s</string>
+    <string name="superheroes_placeholder">Superhéroes de Publisher</string>
+    <string name="exit_text">Salir del programa</string>
+    <string name="logout_text">Logout</string>
+    <string name="usuario_text">Usuario</string>
 </resources>

@@ -5,17 +5,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.constraintlayout.motion.widget.MotionScene.Transition.TransitionOnClick
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.heroesapp.R
-import com.example.heroesapp.models.Companies
-import com.example.heroesapp.models.Heroes
+import com.example.heroesapp.models.Publishers
 import com.squareup.picasso.Picasso
-import java.util.concurrent.Flow.Publisher
 
-class PublisherAdapter(val publisherList: List<Companies>,
-                       val onClick:(Companies) -> Unit)
+class PublisherAdapter(val publisherList: List<Publishers>,
+                       val onClick:(Publishers) -> Unit)
     : RecyclerView.Adapter<PublisherViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PublisherViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.publisher_item,parent,false)

@@ -3,7 +3,6 @@ package com.example.heroesapp.activities
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
@@ -13,14 +12,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.heroesapp.MainActivity
 import com.example.heroesapp.R
 import com.example.heroesapp.adapters.PublisherAdapter
-import com.example.heroesapp.models.Companies
+import com.example.heroesapp.models.Publishers
 
 class PublisherActivity : AppCompatActivity() {
     // Valores de usuario
     lateinit var usernameTV : TextView
     lateinit var logoutBtn : ImageView
     lateinit var publisherRecyclerView : RecyclerView
-    // No recuerdo haber escrito esto, no sé de donde salió.
+    // ?
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,11 +34,11 @@ class PublisherActivity : AppCompatActivity() {
         usernameTV = findViewById(R.id.usernameTV)
         logoutBtn = findViewById(R.id.logoutBtn)
 
-        // Compañias
+        // Publishers
         publisherRecyclerView = findViewById(R.id.publisher_recycleview)
-        publisherRecyclerView.adapter = PublisherAdapter(Companies.companies) {company ->
+        publisherRecyclerView.adapter = PublisherAdapter(Publishers.publishers) { publisher ->
             val heroesAct = Intent(this@PublisherActivity, HeroesActivity::class.java)
-            heroesAct.putExtra("heroesId",company.id)
+            heroesAct.putExtra("heroesId",publisher.id)
             startActivity(heroesAct)
         }
         publisherRecyclerView.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
@@ -50,7 +49,7 @@ class PublisherActivity : AppCompatActivity() {
             val editor = sharedPreferences.edit()
             editor.remove("isLogged")
             editor.apply()
-            // volver a iniciar sesión
+            // Volver a iniciar sesión
             val logOut = Intent(this@PublisherActivity,MainActivity::class.java)
             startActivity(logOut)
             finish()
