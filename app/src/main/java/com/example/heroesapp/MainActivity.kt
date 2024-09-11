@@ -70,6 +70,7 @@ class MainActivity : AppCompatActivity() {
 
             // Login Succesful, ingresar a HOME.
             val loginSuccesful = Intent(this@MainActivity,PublisherActivity::class.java)
+            overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left)
             startActivity(loginSuccesful)
             finish()
         }

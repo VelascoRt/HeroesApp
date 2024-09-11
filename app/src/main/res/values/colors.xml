@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
+    <color name="black">#343779</color>
     <color name="purple">#2A324B</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="red">#f30003</color>
-    <color name="Palatinate_Blue">#3836fd</color>
+    <color name="red">#FF2E4C</color>
+    <color name="Palatinate_Blue">#1E2A78</color>
+    <color name="Blue">#49BCF6</color>
     <color name="Alabaster">#f2f4e5</color>
-    <color name="Jonquil">#f8cf17</color>
+    <color name="Jonquil">#FFE720</color>
 </resources>

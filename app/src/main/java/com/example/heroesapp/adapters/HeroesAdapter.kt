@@ -11,9 +11,16 @@ import com.example.heroesapp.R
 import com.example.heroesapp.models.Heroes
 import com.squareup.picasso.Picasso
 
-class HeroesAdapter(val heroesList : List<Heroes>) : RecyclerView.Adapter<HeroesViewHolder>() {
+class HeroesAdapter(val heroesList : List<Heroes>,val publiserId: Int,
+    val onClick : (Heroes) -> Unit) : RecyclerView.Adapter<HeroesViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HeroesViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.heroes_item,parent,false)
+        var view: View?
+        // Para cambiar el color de los superhéroes. Por el id del publisher mostrará un item o otro.
+        if (publiserId == 0) {
+            view = LayoutInflater.from(parent.context).inflate(R.layout.marvel_item,parent,false)
+        } else {
+            view = LayoutInflater.from(parent.context).inflate(R.layout.dc_item,parent,false)
+        }
         return HeroesViewHolder(view)
     }
 
@@ -25,6 +32,9 @@ class HeroesAdapter(val heroesList : List<Heroes>) : RecyclerView.Adapter<Heroes
         val hero = heroesList[position]
         holder.heroeName.text = hero.name
         Picasso.get().load(hero.image).into(holder.heroeImage)
+        holder.itemView.setOnClickListener {
+            onClick(hero)
+        }
     }
 
 }

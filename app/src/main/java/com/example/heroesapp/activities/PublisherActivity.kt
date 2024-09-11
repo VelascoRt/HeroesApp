@@ -38,7 +38,8 @@ class PublisherActivity : AppCompatActivity() {
         publisherRecyclerView = findViewById(R.id.publisher_recycleview)
         publisherRecyclerView.adapter = PublisherAdapter(Publishers.publishers) { publisher ->
             val heroesAct = Intent(this@PublisherActivity, HeroesActivity::class.java)
-            heroesAct.putExtra("heroesId",publisher.id)
+            heroesAct.putExtra("heroesPublisherId",publisher.id)
+            overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left)
             startActivity(heroesAct)
         }
         publisherRecyclerView.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
@@ -52,6 +53,7 @@ class PublisherActivity : AppCompatActivity() {
             // Volver a iniciar sesión
             val logOut = Intent(this@PublisherActivity,MainActivity::class.java)
             startActivity(logOut)
+            overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right)
             finish()
         }
     }
