@@ -9,6 +9,7 @@ It has this requirements:
  - HeroDetailActivity
 
 changelog:
+- 1.4 : HEROES DETAIL ACTIVITY AND DESIGN
 - 1.3.1 : COMPANY RENAME TO PUBLISHER AND OTHER CHANGES
 - 1.3 : HEROES ACTIVITY
 - 1.2 : PUBLISHER ACTIVITY
